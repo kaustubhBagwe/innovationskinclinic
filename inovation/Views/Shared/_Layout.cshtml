@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/Content/img/logo_1.png" type="image/png" sizes="16x16">
+    <title>INNOVATION SKIN CLINIC - DERMATOGY - GHATKOPAR -  MUMBAI - INDIA</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.c om/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /**
+ * Tooltip Styles
+ */
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+        .navright {
+            list-style: none;
+            display: inline-block;
+        }
+
+            .navright li {
+                display: inline-block;
+                margin-left: 23px;
+                font-size: 18px;
+            }
+
+                .navright li a {
+                    color: #333333b5;
+                }
+
+        nav {
+            display: grid;
+        }
+
+            nav ul {
+                font-size: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+                nav ul li {
+                    display: inline-block;
+                    position: relative;
+                }
+
+                    nav ul li a {
+                        color: #fff;
+                        display: block;
+                        font-size: 14px;
+                        padding: 15px 14px;
+                        tranition: 0.5s linear;
+                    }
+
+                    nav ul li:hover {
+                        background: #126d9b;
+                        color: #fff;
+                        /*border-bottom: 6px solid #126d9b;
+                        margin-bottom: -8px;*/
+                    }
+
+                        nav ul li:hover:after {
+                            -webkit-animation: circle 1.5s ease-in forwards;
+                        }
+
+                    nav ul li ul {
+                        border-bottom: 5px solid #2ba0db;
+                        display: none;
+                        position: absolute;
+                        width: 250px;
+                    }
+
+                        nav ul li ul li {
+                            border-top: 1px solid #444;
+                            display: block;
+                        }
+
+                            nav ul li ul li:first-child {
+                                border-top: none;
+                            }
+
+                            nav ul li ul li a {
+                                background: #373737;
+                                display: block;
+                                padding: 10px 14px;
+                            }
+
+                                nav ul li ul li a:hover {
+                                    background: #126d9b;
+                                    color: #fff;
+                                    text-decoration: none;
+                                }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('nav li').hover(
+      function () {
+          $('ul', this).stop().slideDown(200);
+      },
+      function () {
+          $('ul', this).stop().slideUp(200);
+      }
+);
+        });
+
+    </script>
+</head>
+<body>
+    <div style="width:100%;background-color:#deddce;height:40px;position: fixed;right: 0;left: 0;    position: fixed;
+    z-index: 9999999999999;">
+        <div style="text-align:center;color:#333333b5;width:50%;float:left;   font-size: 18px;letter-spacing: 3px;">
+            <p style="margin-top:10px;font-weight:600"><i class="fa fa-mobile" aria-hidden="true"></i><span>+91 8087958141 / 983380510</span></p>
+        </div>
+        <div style="text-align:center;color:#fff;width:50%;float:left">
+            <p style="text-shadow: 0px 2px 8px #6b6666;margin-top:10px;font-weight:600">
+                <ul id="cssnav" class="navright">
+                    <li data-tooltip="I’m the tooltip text."><a href="WEBSITE URL HERE" target="blank" title="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="WEBSITE URL HERE" target="blank" title="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="WEBSITE URL HERE" target="blank" title="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="WEBSITE URL HERE" target="blank" title="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    <li><a href="WEBSITE URL HERE" target="blank" title="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+                    <li><a href="WEBSITE URL HERE" target="blank" title="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                </ul>
+
+            </p>
+        </div>
+
+    </div>
+    <div style="width:100%;background-color:#bebebe;height:50px;position: fixed;right: 0;left: 0;    position: fixed;    TOP: 40PX;
+    z-index: 9999999999999;">
+        <a href="/" class="navbar-brand">
+            <img src="~/Content/img/logo_1.png" title="title" alt="additional title" style="height: 48px; margin-left: 114px; margin-top: -15px;display:inline" />
+            <h3 style="display:inline;font-weight:600;color:#333">
+                INNOVATION
+            </h3>
+            <span style="display:inline;font-weight:600;color:#fff;float:right;margin-left: 100px;">
+                CENTER FOR DERMTOLOGY COSMETOLOGY ASTHETIC LASERS AND BODY SCULPTING
+            </span>
+        </a>
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#536876;color:#fff;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <nav id="desktopnav" class="navbar navbar-default" style="background-color:transparent;border-color:transparent;margin-left: 51px;">
+                    <div class="container-fluid">
+                        <nav>
+                            <div class="container">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/">HOME</a></li>
+                                    <li>
+                                        <a href="/home/about">ABOUT US</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">SERVICES</a>
+                                        <ul>
+                                            <li><a href="#">Category One  <i class="fa fa-play" aria-hidden="true" style="float:right"></i></a></li>
+                                            <li><a href="#">Category Two <i class="fa fa-play" aria-hidden="true" style="float:right"></i></a></li>
+                                            <li><a href="#">Category Three <i class="fa fa-play" aria-hidden="true" style="float:right"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">GALLERY</a></li>
+                                    <li><a href="#">TESTIMONIALS</a></li>
+                                    <li><a href="#">ENQUIRY</a></li>
+                                    <li><a href="#">CONTACT US</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+    <div class="body-content" style="margin-left:0px;margin-right:0px">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
