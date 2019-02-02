@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<SYNC>
+  <DBConnection>
+    <SERVER>DESKTOP-82T6NCT</SERVER>
+    <USER_NAME>sa</USER_NAME>
+    <PASSWORD>hasti</PASSWORD>
+    <DATABASE>innovation</DATABASE>
+    <TrustedConnection>false</TrustedConnection>
+  </DBConnection>
+</SYNC>
