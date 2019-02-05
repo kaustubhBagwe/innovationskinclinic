@@ -20,6 +20,13 @@ namespace inovation.Controllers
             return View();
         }
 
+        public ActionResult OtherCounsultant()
+        {
+
+            return View();
+        }
+
+       
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
