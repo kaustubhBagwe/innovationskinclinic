@@ -71,6 +71,32 @@ namespace innovationDAL.ActionMethod
             }
         }
 
+        public results deleteTestimonials(testimonialModel testimonialparams)
+        {
+            using (DAL db = new DAL())
+            {
+                results results = new results();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "sp_DeleteTestimonials";
+                    cmd.Parameters.AddWithValue("@Id", testimonialparams.id);
+                    DataSet ds = db.ReturnDataset(cmd);
+                    results.flag = Convert.ToString(ds.Tables[0].Rows[0]["Flag"]);
+                    results.msg = Convert.ToString(ds.Tables[0].Rows[0]["msg"]);
+
+                    return results;
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
         public class results {
             public string flag { get; set; }
             public string msg { get; set; }
