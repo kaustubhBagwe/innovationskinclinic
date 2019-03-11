@@ -8,7 +8,7 @@ namespace inovation.Controllers
 {
     public class aboutController : Controller
     {
-        // GET: about
+        // GET: about ok
         public ActionResult Index()
         {
             return View();
