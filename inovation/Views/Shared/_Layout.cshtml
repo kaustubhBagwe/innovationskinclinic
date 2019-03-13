@@ -156,7 +156,7 @@
                                            text-decoration: none;
                                        }
 
-               #footerfixed {
+               /*#footerfixed {
                    position: fixed;
                    z-index: 100;
                    background-color: #dc074d;
@@ -171,7 +171,7 @@
     font-size: 18px;
     padding: 5px;
     color: white;
-}
+}*/
 
                .zoom:hover {
   -webkit-transform: scale(1.08);
@@ -275,11 +275,11 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    <div id="footerfixed">
+    @*<div id="footerfixed">
 
         <a href="tel:+918087958141" onclick="ga('send','event','Appointment','Click','Footer Fixed','10');"><div class="container">Book an Appointment Call +918087958141</div></a>
 
-    </div>
+    </div>*@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
