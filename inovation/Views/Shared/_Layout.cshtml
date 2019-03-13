@@ -12,148 +12,171 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.c om/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /**
- * Tooltip Styles
- */
+               /**
+        * Tooltip Styles
+        */
 
-/* Add this attribute to the element that needs a tooltip */
-[data-tooltip] {
-  position: relative;
-  z-index: 2;
-  cursor: pointer;
+               /* Add this attribute to the element that needs a tooltip */
+               [data-tooltip] {
+                   position: relative;
+                   z-index: 2;
+                   cursor: pointer;
+               }
+
+                   /* Hide the tooltip content by default */
+                   [data-tooltip]:before,
+                   [data-tooltip]:after {
+                       visibility: hidden;
+                       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                       filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+                       opacity: 0;
+                       pointer-events: none;
+                   }
+
+                   /* Position tooltip above the element */
+                   [data-tooltip]:before {
+                       position: absolute;
+                       bottom: 150%;
+                       left: 50%;
+                       margin-bottom: 5px;
+                       margin-left: -80px;
+                       padding: 7px;
+                       width: 160px;
+                       -webkit-border-radius: 3px;
+                       -moz-border-radius: 3px;
+                       border-radius: 3px;
+                       background-color: #000;
+                       background-color: hsla(0, 0%, 20%, 0.9);
+                       color: #fff;
+                       content: attr(data-tooltip);
+                       text-align: center;
+                       font-size: 14px;
+                       line-height: 1.2;
+                   }
+
+                   /* Triangle hack to make tooltip look like a speech bubble */
+                   [data-tooltip]:after {
+                       position: absolute;
+                       bottom: 150%;
+                       left: 50%;
+                       margin-left: -5px;
+                       width: 0;
+                       border-top: 5px solid #000;
+                       border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+                       border-right: 5px solid transparent;
+                       border-left: 5px solid transparent;
+                       content: " ";
+                       font-size: 0;
+                       line-height: 0;
+                   }
+
+                   /* Show tooltip content on hover */
+                   [data-tooltip]:hover:before,
+                   [data-tooltip]:hover:after {
+                       visibility: visible;
+                       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                       filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+                       opacity: 1;
+                   }
+
+               .navright {
+                   list-style: none;
+                   display: inline-block;
+               }
+
+                   .navright li {
+                       display: inline-block;
+                       margin-left: 23px;
+                       font-size: 18px;
+                   }
+
+                       .navright li a {
+                           color: #333333b5;
+                       }
+
+               nav {
+                   display: grid;
+               }
+
+                   nav ul {
+                       font-size: 0;
+                       margin: 0;
+                       padding: 0;
+                   }
+
+                       nav ul li {
+                           display: inline-block;
+                           position: relative;
+                       }
+
+                           nav ul li a {
+                               color: #fff;
+                               display: block;
+                               font-size: 14px;
+                               padding: 15px 14px;
+                               tranition: 0.5s linear;
+                           }
+
+                           nav ul li:hover {
+                               background: #126d9b;
+                               color: #fff;
+                               /*border-bottom: 6px solid #126d9b;
+                               margin-bottom: -8px;*/
+                           }
+
+                               nav ul li:hover:after {
+                                   -webkit-animation: circle 1.5s ease-in forwards;
+                               }
+
+                           nav ul li ul {
+                               border-bottom: 5px solid #2ba0db;
+                               display: none;
+                               position: absolute;
+                               width: 250px;
+                           }
+
+                               nav ul li ul li {
+                                   border-top: 1px solid #444;
+                                   display: block;
+                               }
+
+                                   nav ul li ul li:first-child {
+                                       border-top: none;
+                                   }
+
+                                   nav ul li ul li a {
+                                       background: #373737;
+                                       display: block;
+                                       padding: 10px 14px;
+                                   }
+
+                                       nav ul li ul li a:hover {
+                                           background: #126d9b;
+                                           color: #fff;
+                                           text-decoration: none;
+                                       }
+
+               #footerfixed {
+                   position: fixed;
+                   z-index: 100;
+                   background-color: #dc074d;
+                   bottom: 0px;
+                   left: 0px;
+                   right: 0px;
+                   margin-bottom: 0px;
+                   text-align: center;
+               }
+               #footerfixed div {
+    font-family: Droid Serif;
+    font-size: 18px;
+    padding: 5px;
+    color: white;
 }
 
-/* Hide the tooltip content by default */
-[data-tooltip]:before,
-[data-tooltip]:after {
-  visibility: hidden;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  pointer-events: none;
+               .zoom:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
 }
-
-/* Position tooltip above the element */
-[data-tooltip]:before {
-  position: absolute;
-  bottom: 150%;
-  left: 50%;
-  margin-bottom: 5px;
-  margin-left: -80px;
-  padding: 7px;
-  width: 160px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #000;
-  background-color: hsla(0, 0%, 20%, 0.9);
-  color: #fff;
-  content: attr(data-tooltip);
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.2;
-}
-
-/* Triangle hack to make tooltip look like a speech bubble */
-[data-tooltip]:after {
-  position: absolute;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -5px;
-  width: 0;
-  border-top: 5px solid #000;
-  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  content: " ";
-  font-size: 0;
-  line-height: 0;
-}
-
-/* Show tooltip content on hover */
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after {
-  visibility: visible;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-}
-        .navright {
-            list-style: none;
-            display: inline-block;
-        }
-
-            .navright li {
-                display: inline-block;
-                margin-left: 23px;
-                font-size: 18px;
-            }
-
-                .navright li a {
-                    color: #333333b5;
-                }
-
-        nav {
-            display: grid;
-        }
-
-            nav ul {
-                font-size: 0;
-                margin: 0;
-                padding: 0;
-            }
-
-                nav ul li {
-                    display: inline-block;
-                    position: relative;
-                }
-
-                    nav ul li a {
-                        color: #fff;
-                        display: block;
-                        font-size: 14px;
-                        padding: 15px 14px;
-                        tranition: 0.5s linear;
-                    }
-
-                    nav ul li:hover {
-                        background: #126d9b;
-                        color: #fff;
-                        /*border-bottom: 6px solid #126d9b;
-                        margin-bottom: -8px;*/
-                    }
-
-                        nav ul li:hover:after {
-                            -webkit-animation: circle 1.5s ease-in forwards;
-                        }
-
-                    nav ul li ul {
-                        border-bottom: 5px solid #2ba0db;
-                        display: none;
-                        position: absolute;
-                        width: 250px;
-                    }
-
-                        nav ul li ul li {
-                            border-top: 1px solid #444;
-                            display: block;
-                        }
-
-                            nav ul li ul li:first-child {
-                                border-top: none;
-                            }
-
-                            nav ul li ul li a {
-                                background: #373737;
-                                display: block;
-                                padding: 10px 14px;
-                            }
-
-                                nav ul li ul li a:hover {
-                                    background: #126d9b;
-                                    color: #fff;
-                                    text-decoration: none;
-                                }
     </style>
     <script>
         $(document).ready(function () {
@@ -170,7 +193,7 @@
     </script>
 </head>
 <body>
-    <div style="width:100%;background-color:#deddce;height:40px;position: fixed;right: 0;left: 0;    position: fixed;
+    <div style="width:100%;background-color:#deddce;height:40px;position: fixed;right: 0;left: 0;    position:fixed;top: 0;
     z-index: 9999999999999;">
         <div style="text-align:center;color:#333333b5;width:50%;float:left;   font-size: 18px;letter-spacing: 3px;">
             <p style="margin-top:10px;font-weight:600"><i class="fa fa-mobile" aria-hidden="true"></i><span>+91 8087958141 / 983380510</span></p>
@@ -188,7 +211,6 @@
 
             </p>
         </div>
-
     </div>
     <div style="width:100%;background-color:#bebebe;height:50px;position: fixed;right: 0;left: 0;    position: fixed;    TOP: 40PX;
     z-index: 9999999999999;">
@@ -220,7 +242,7 @@
                                 <ul class="nav navbar-nav">
                                     <li><a href="/">HOME</a></li>
                                     <li>
-                                        <a href="/home/about">ABOUT US</a>
+                                        <a href="/about">ABOUT</a>
                                     </li>
                                     <li>
                                         <a href="#">SERVICES</a>
@@ -231,9 +253,12 @@
                                         </ul>
                                     </li>
                                     <li><a href="#">GALLERY</a></li>
-                                    <li><a href="#">TESTIMONIALS</a></li>
-                                    <li><a href="#">ENQUIRY</a></li>
                                     <li><a href="#">CONTACT US</a></li>
+                                    <li><a href="#">MEDIA</a></li>
+                                    <li><a href="#">BLOG</a></li>
+                                    <li><a href="/testimonials">TESTIMONIALS</a></li>
+                                    <li><a href="#">OFFERS</a></li>
+
                                 </ul>
                             </div>
                         </nav>
@@ -250,7 +275,11 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
+    <div id="footerfixed">
 
+        <a href="tel:+918087958141" onclick="ga('send','event','Appointment','Click','Footer Fixed','10');"><div class="container">Book an Appointment Call +918087958141</div></a>
+
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

@@ -12,7 +12,7 @@ namespace inovation.Controllers
         {
             return View();
         }
-
+        [Route("About")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
