@@ -10,15 +10,41 @@ using innovationDAL.Model;
 namespace innovationDAL.ActionMethod
 {
     class testimonialController
-    {        
-        public List<testimonialModel> getTestimonials() {
+    {
+        public List<testimonialModel> getUsersTestimonialsList(testimonialModel testimonialParams)
+        {
+            using (DAL db = new DAL())
+            {
+                List<testimonialModel> lstestimonial = new List<testimonialModel>();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "sp_GetUsersTestimonialsList";
+                    cmd.Parameters.AddWithValue("@showOnHomePage", Convert.ToBoolean(testimonialParams.onHomePage));
+                    DataSet ds = db.ReturnDataset(cmd);
+                    foreach (DataRow item in ds.Tables[0].Rows)
+                    {
+                        testimonialModel data = new testimonialModel();
+                        lstestimonial.Add(data);
+                    }
+                    return (lstestimonial);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+     
+        public List<testimonialModel> getAdminTestimonialsList() {
             using (DAL db = new DAL()) {
                 List<testimonialModel> lstestimonial = new List<testimonialModel>();
                 try
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.CommandText = "sp_GetTestimonials";
+                    cmd.CommandText = "sp_GetAdminTestimonialsList";
                     DataSet ds = db.ReturnDataset(cmd);
                     foreach (DataRow item in ds.Tables[0].Rows)
                     {
@@ -53,11 +79,12 @@ namespace innovationDAL.ActionMethod
                     cmd.Parameters.AddWithValue("@SEOTitle",testimonialparams.SEOtitle);
                     cmd.Parameters.AddWithValue("@SEOMeta",testimonialparams.SEOmeta);
                     cmd.Parameters.AddWithValue("@Active",testimonialparams.active);
+                    cmd.Parameters.AddWithValue("@loginID", "123");
                     cmd.Parameters.AddWithValue("@Mode", testimonialparams.mode);
 
                     DataSet ds = db.ReturnDataset(cmd);
 
-                    results.flag = Convert.ToString(ds.Tables[0].Rows[0]["Flag"]);
+                    results.flag = Convert.ToBoolean(ds.Tables[0].Rows[0]["Flag"]);
                     results.msg = Convert.ToString(ds.Tables[0].Rows[0]["msg"]);
 
                     return results;
@@ -65,7 +92,6 @@ namespace innovationDAL.ActionMethod
                 }
                 catch (Exception)
                 {
-                    
                     throw;
                 }
             }
@@ -83,7 +109,7 @@ namespace innovationDAL.ActionMethod
                     cmd.CommandText = "sp_DeleteTestimonials";
                     cmd.Parameters.AddWithValue("@Id", testimonialparams.id);
                     DataSet ds = db.ReturnDataset(cmd);
-                    results.flag = Convert.ToString(ds.Tables[0].Rows[0]["Flag"]);
+                    results.flag = Convert.ToBoolean(ds.Tables[0].Rows[0]["Flag"]);
                     results.msg = Convert.ToString(ds.Tables[0].Rows[0]["msg"]);
 
                     return results;
@@ -98,7 +124,7 @@ namespace innovationDAL.ActionMethod
         }
 
         public class results {
-            public string flag { get; set; }
+            public Boolean flag { get; set; }
             public string msg { get; set; }
         
         }
