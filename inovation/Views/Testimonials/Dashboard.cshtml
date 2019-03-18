@@ -1,0 +1,112 @@
+﻿@model IEnumerable<inovation.Models.Testimonials>
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayOut.cshtml";
+}
+
+<h2>Dashboard</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.degree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.doctors_testimonial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.onHomePage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgfilepath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.docfilepath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEOtitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEOmeta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.degree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.doctors_testimonial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.onHomePage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgfilepath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.docfilepath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEOtitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEOmeta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.updatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.updatedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

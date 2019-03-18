@@ -8,12 +8,18 @@ namespace inovation.Controllers
 {
     public class TestimonialsController : Controller
     {
+        Innovtion
         // GET: Testimonials
         public ActionResult Index()
         {
             return View();
         }
+        // GET: Testimonials Admin Dashboard
+        public ActionResult Dashboard()
+        {
 
+            return View();
+        }
         // GET: Testimonials/Details/5
         public ActionResult Details(int id)
         {

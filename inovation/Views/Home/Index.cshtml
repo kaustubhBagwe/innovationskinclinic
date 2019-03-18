@@ -14,6 +14,29 @@
     .col-lg-4 {
     width: 31.333333%;
 }
+    #dvEnquiry input[type=text] {
+    display: block;
+    width: 100%;
+    height: 53px;
+    padding: 6px 12px;
+    font-size: 20px;
+    line-height: 1.428571429;
+    color: #484646;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border-bottom: 3px solid #1b53c3;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    /* border: 1px solid #fff; */
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+
 </style>
 @*<div class="banner">
 
@@ -201,53 +224,63 @@
     </div>
 </div>
 <div style="clear:both"></div>
-<div class="col-lg-12" style="color:#333;min-height:350px">
-
-    <div class="col-lg-6" style="text-align:left">
+<div class="col-lg-12" style="color:#333;min-height:350px" id="dvEnquiry">
         <h2 style="color:#333">Enquiry</h2>
         <div class="spliter"></div>
-        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        <br />
+        <br />
+        <center>
+            <div class="col-lg-6" style="justify-content: center;align-items: center;">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary("", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.Label("Name", new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBox("Name","", new { @class = "form-control", secure = "required,Name" })
-                </div>
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.Label("Name", new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBox("Name", "", new { @class = "form-control", secure = "required,Name" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Email", new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBox("Email", "", new { @class = "form-control", secure = "required,email" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Contact Number", new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBox("ContactNumber", "", new { @class = "form-control", secure = "required,Name" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Query/Message", new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBox("Message", "", new { @class = "form-control", secure = "required,Name" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" class="btn btn-default" value="Send" />
+                        </div>
+                    </div>
+                }
             </div>
-                <div class="form-group">
-                    @Html.Label("Email", new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBox("Email", "", new { @class = "form-control", secure = "required,email" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.Label("Contact Number", new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBox("ContactNumber", "", new { @class = "form-control", secure = "required,Name" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" class="btn btn-default" value="Send" />
-                    </div>
-                </div>
-            }
-
-
-    </div>
-
+           
+        </center>
 </div>
 <div style="clear:both"></div>
-<div class="col-lg-12" style="color:#333;min-height:350px">
+<div class="col-lg-12" style="color:#333;min-height:550px">
    
-    <div class="col-lg-6" style="text-align:center">
+    <div class="col-lg-3" style="text-align:center">
         <h2 style="color:#333">Addess</h2>
-       
+        Innovation Skin Clinic<br />
+
+        23, Happy Home Society,<br />
+        Opp. Gurukrupa Hotel, Tilak Road,<br />
+        Ghatkopar East, Mumbai-400077 .
     </div>
-    <div class="col-lg-6">
-        <h4>Mr. Rawat</h4>
-        <p>Best Dermatologiest in mumbai area</p>
+    <div class="col-lg-7" style="width: 75%;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.6475039370507!2d72.9035926143768!3d19.079229756830166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c62ed8c83faf%3A0xd50c069483d826f1!2sINNOVATION+SKIN+CLINIC+AND+LASER+CENTRE!5e0!3m2!1sen!2sin!4v1552579116175"  frameborder="0" style="border:0;width:100%;height:100%" allowfullscreen></iframe>
     </div>
 </div>

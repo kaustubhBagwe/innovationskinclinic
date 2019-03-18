@@ -207,6 +207,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Testimonials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1759,6 +1760,7 @@
     <Content Include="Views\about\dr_Swagata_Tambe.cshtml" />
     <Content Include="Views\about\Index.cshtml" />
     <Content Include="Views\Home\OtherCounsultant.cshtml" />
+    <Content Include="Views\Testimonials\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
